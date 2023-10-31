@@ -1,0 +1,22 @@
+.container-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.container-header-nav {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.header-img-logo {
+  width: 27px;
+  height: 27px;
+  margin-right: 7px;
+}

@@ -1,0 +1,11 @@
+.container-products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.container-product-card {
+  width: 200px;
+  background: gray;
+  border-radius: 10px;
+}

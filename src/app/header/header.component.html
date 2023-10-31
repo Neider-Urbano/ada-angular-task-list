@@ -1,0 +1,52 @@
+<mat-toolbar color="primary" class="container-header">
+  <div class="container-header-logo">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/401/401143.png"
+      alt="logo app"
+      class="header-img-logo"
+    />
+    <span>My App</span>
+  </div>
+  <nav class="container-header-nav">
+    <a>Home</a>
+    <mat-form-field>
+      <mat-label>Products</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let product of products" [value]="product.value">
+          {{ product.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <a>About us</a>
+  </nav>
+  <div>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with store icon"
+    >
+      <mat-icon>store</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with person icon"
+    >
+      <mat-icon>person</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

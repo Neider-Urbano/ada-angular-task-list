@@ -1,0 +1,20 @@
+.container-create-product {
+  padding: 30px 40px;
+}
+
+.container-form-create-product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px 50px;
+}
+
+.container-property-product {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.property-product {
+  width: 100%;
+}

@@ -15,16 +15,20 @@
     <span>My App</span>
   </div>
   <nav class="container-header-nav">
-    <a>Home</a>
+    <a routerLink="/">Home</a>
     <mat-form-field>
       <mat-label>Products</mat-label>
       <mat-select>
-        <mat-option *ngFor="let product of products" [value]="product.value">
+        <mat-option
+          *ngFor="let product of products"
+          [value]="product.value"
+          routerLink="/{{ product.viewValue.toLocaleLowerCase() }}"
+        >
           {{ product.viewValue }}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <a>About us</a>
+    <a routerLink="/about-us">About Us</a>
   </nav>
   <div>
     <button

@@ -1,3 +1,19 @@
+.container-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+.container-main-section-uno {
+  width: 20%;
+  background: blue;
+}
+
+.container-main-section-dos {
+  background: red;
+  width: 75%;
+}
+
 .container-products-list {
   display: flex;
   flex-wrap: wrap;
@@ -8,4 +24,35 @@
   width: 200px;
   background: gray;
   border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 867px) {
+  .container-main-section-uno {
+    width: 25%;
+  }
+
+  .container-main-section-dos {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container-main-section-uno {
+    width: 100%;
+  }
+
+  .container-main-section-dos {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .container-main-section-uno {
+    width: 100%;
+  }
+
+  .container-main-section-dos {
+    width: 100%;
+  }
 }

@@ -1,5 +1,13 @@
-<div class="container-products-list">
-  <div *ngFor="let product of products" class="container-product-card">
-    <p>{{ product.color }}</p>
+<div class="container-main">
+  <div class="container-main-section-uno">
+    <app-filter-options-advance></app-filter-options-advance>
+  </div>
+  <div class="container-main-section-dos">
+    <app-filter-options-basic></app-filter-options-basic>
+    <div class="container-products-list">
+      <div *ngFor="let product of products" class="container-product-card">
+        <p>{{ product.color }}</p>
+      </div>
+    </div>
   </div>
 </div>

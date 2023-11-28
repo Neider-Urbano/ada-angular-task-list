@@ -1,48 +1,217 @@
 <div class="container-create-product">
   <h2>Form for add product</h2>
-  <form class="container-form-create-product">
+  <form
+    class="container-form-create-product"
+    [formGroup]="formGroupProduct"
+    (submit)="onSubmit(formGroupProduct.value)"
+  >
     <div class="container-property-product">
       <label>url img</label>
-      <input type="url" placeholder="url img" class="property-product" />
+      <input
+        type="url"
+        placeholder="url img"
+        name="urlImg"
+        formControlName="urlImg"
+        class="property-product"
+      />
+      <div
+        *ngIf="
+          formGroupProduct.get('urlImg')?.invalid &&
+          (formGroupProduct.get('urlImg')?.dirty ||
+            formGroupProduct.get('urlImg')?.touched)
+        "
+      >
+        <span *ngIf="formGroupProduct.get('urlImg')?.errors?.['required']">
+          urlImg required
+        </span>
+        <span *ngIf="formGroupProduct.get('urlImg')?.hasError('minlength')">
+          Min 10 characters
+        </span>
+      </div>
     </div>
+
     <div class="container-property-product">
       <label>title</label>
-      <input type="text" placeholder="title" class="property-product" />
+      <input
+        type="text"
+        placeholder="title"
+        class="property-product"
+        name="title"
+        formControlName="title"
+      />
+      <div
+        *ngIf="
+          formGroupProduct.get('title')?.invalid &&
+          (formGroupProduct.get('title')?.dirty ||
+            formGroupProduct.get('title')?.touched)
+        "
+      >
+        <span *ngIf="formGroupProduct.get('title')?.errors?.['required']">
+          Title required
+        </span>
+        <span *ngIf="formGroupProduct.get('title')?.hasError('minlength')">
+          Min 3 characters
+        </span>
+      </div>
     </div>
+
     <div class="container-property-product">
       <label>rating initial</label>
       <input
         type="number"
         placeholder="rating initial"
+        name="ratingInitial"
+        formControlName="ratingInitial"
         class="property-product"
       />
+      <div
+        *ngIf="
+          formGroupProduct.get('ratingInitial')?.invalid &&
+          (formGroupProduct.get('ratingInitial')?.dirty ||
+            formGroupProduct.get('ratingInitial')?.touched)
+        "
+      >
+        <span
+          *ngIf="formGroupProduct.get('ratingInitial')?.errors?.['required']"
+        >
+          ratingInitial required
+        </span>
+        <span *ngIf="formGroupProduct.get('ratingInitial')?.hasError('min')">
+          Min 0
+        </span>
+        <span *ngIf="formGroupProduct.get('ratingInitial')?.hasError('max')">
+          Max 10
+        </span>
+      </div>
     </div>
+
     <div class="container-property-product">
       <label>preview price</label>
       <input
         type="number"
         placeholder="preview price"
+        name="previewPrice"
+        formControlName="previewPrice"
         class="property-product"
       />
+      <div
+        *ngIf="
+          formGroupProduct.get('previewPrice')?.invalid &&
+          (formGroupProduct.get('previewPrice')?.dirty ||
+            formGroupProduct.get('previewPrice')?.touched)
+        "
+      >
+        <span
+          *ngIf="formGroupProduct.get('previewPrice')?.errors?.['required']"
+        >
+          previewPrice required
+        </span>
+        <span *ngIf="formGroupProduct.get('previewPrice')?.hasError('max')">
+          Max 100000 characters
+        </span>
+      </div>
     </div>
+
     <div class="container-property-product">
       <label>new price</label>
-      <input type="number" placeholder="new price" class="property-product" />
+      <input
+        type="number"
+        placeholder="new price"
+        name="newPrice"
+        formControlName="newPrice"
+        class="property-product"
+      />
+      <div
+        *ngIf="
+          formGroupProduct.get('newPrice')?.invalid &&
+          (formGroupProduct.get('newPrice')?.dirty ||
+            formGroupProduct.get('newPrice')?.touched)
+        "
+      >
+        <span *ngIf="formGroupProduct.get('newPrice')?.errors?.['required']">
+          newPrice required
+        </span>
+        <span *ngIf="formGroupProduct.get('newPrice')?.hasError('min')">
+          Min 50000 characters
+        </span>
+      </div>
     </div>
+
     <div class="container-property-product">
       <label>company</label>
-      <input type="text" placeholder="company" class="property-product" />
+      <input
+        type="text"
+        placeholder="company"
+        name="company"
+        formControlName="company"
+        class="property-product"
+      />
+      <div
+        *ngIf="
+          formGroupProduct.get('company')?.invalid &&
+          (formGroupProduct.get('company')?.dirty ||
+            formGroupProduct.get('company')?.touched)
+        "
+      >
+        <span *ngIf="formGroupProduct.get('company')?.errors?.['required']">
+          company required
+        </span>
+        <span *ngIf="formGroupProduct.get('company')?.hasError('minlength')">
+          Min 3 characters
+        </span>
+      </div>
     </div>
+
     <div class="container-property-product">
       <label>color</label>
-      <input type="color" placeholder="color" class="property-product" />
+      <input
+        type="color"
+        placeholder="color"
+        name="color"
+        formControlName="color"
+        class="property-product"
+      />
+      <div
+        *ngIf="
+          formGroupProduct.get('color')?.invalid &&
+          (formGroupProduct.get('color')?.dirty ||
+            formGroupProduct.get('color')?.touched)
+        "
+      >
+        <span *ngIf="formGroupProduct.get('color')?.errors?.['required']">
+          color required
+        </span>
+      </div>
     </div>
+
     <div class="container-property-product">
       <label>category</label>
-      <select class="property-product">
-        <option>Select category</option>
-        <option>sneakers</option>
+      <select
+        class="property-product"
+        name="category"
+        formControlName="category"
+      >
+        <option value="select">Select category</option>
+        <option value="sneakers">sneakers</option>
       </select>
+      <div
+        *ngIf="
+          formGroupProduct.get('category')?.invalid &&
+          (formGroupProduct.get('category')?.dirty ||
+            formGroupProduct.get('category')?.touched)
+        "
+      >
+        <span *ngIf="formGroupProduct.get('category')?.errors?.['required']">
+          category required
+        </span>
+        <span
+          *ngIf="formGroupProduct.get('category')?.errors?.['categoryInvalid']"
+        >
+          Category Invalid
+        </span>
+      </div>
     </div>
+
+    <button type="submit" [disabled]="!formGroupProduct.valid">Create</button>
   </form>
 </div>

@@ -6,7 +6,7 @@
     <app-filter-options-basic></app-filter-options-basic>
     <div class="container-products-list">
       <div *ngFor="let product of products" class="container-product-card">
-        <p>{{ product.color }}</p>
+        <app-product-card [product]="product" />
       </div>
     </div>
   </div>

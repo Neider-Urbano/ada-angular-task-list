@@ -5,12 +5,16 @@ import { ProductsListRoutingModule } from './products-list-routing.module';
 import { ProductsListComponent } from './products-list.component';
 import { FilterOptionsBasicComponent } from '../filter-options-basic/filter-options-basic.component';
 import { FilterOptionsAdvanceComponent } from '../filter-options-advance/filter-options-advance.component';
+import { ProductCardComponent } from '../product-card/product-card.component';
+import { ProductStyleDirective } from '../product-card/product-style.directive';
 
 @NgModule({
   declarations: [
     ProductsListComponent,
     FilterOptionsBasicComponent,
     FilterOptionsAdvanceComponent,
+    ProductCardComponent,
+    ProductStyleDirective,
   ],
   imports: [CommonModule, ProductsListRoutingModule],
 })

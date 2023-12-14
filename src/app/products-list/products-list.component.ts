@@ -7,6 +7,8 @@ import { Observable, from, map } from 'rxjs';
   styleUrls: ['./products-list.component.css'],
 })
 export class ProductsListComponent implements OnInit {
+  visible = false;
+  private productsFrom$: Observable<any>;
   products = [
     {
       id: 1,
@@ -325,8 +327,6 @@ export class ProductsListComponent implements OnInit {
     },
   ];
 
-  private productsFrom$: Observable<any>;
-
   constructor() {
     this.productsFrom$ = from(this.products);
   }
@@ -335,5 +335,6 @@ export class ProductsListComponent implements OnInit {
     this.productsFrom$
       .pipe(map((data) => data))
       .subscribe((data) => console.log(data));
+    this.visible = this.products.length > 0;
   }
 }

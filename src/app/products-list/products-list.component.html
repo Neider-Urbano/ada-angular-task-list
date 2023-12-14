@@ -4,10 +4,13 @@
   </div>
   <div class="container-main-section-dos">
     <app-filter-options-basic></app-filter-options-basic>
-    <div class="container-products-list">
+    <div class="container-products-list" *ngIf="visible; else templateLayout">
       <div *ngFor="let product of products" class="container-product-card">
         <app-product-card [product]="product" />
       </div>
     </div>
+    <ng-template #templateLayout>
+      <h1>Products list empty</h1>
+    </ng-template>
   </div>
 </div>

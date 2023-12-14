@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { ProductsService } from '../services/products.service';
 
 enum CategoryProduct {
   'sneakers',
@@ -39,7 +40,10 @@ export class FormCreateProductComponent {
     return error;
   };
 
-  constructor(private _builder: FormBuilder) {
+  constructor(
+    private _builder: FormBuilder,
+    private productsService: ProductsService
+  ) {
     this.formGroupProduct = this._builder.group({
       urlImg: ['', [Validators.required, Validators.minLength(10)]],
       title: ['', [Validators.required, Validators.minLength(3)]],
@@ -54,12 +58,18 @@ export class FormCreateProductComponent {
       category: ['', [Validators.required, this.validCategory]],
     });
   }
+
   onSubmit(form: FormGroupProduct) {
     if (this.formGroupProduct.valid) {
       alert(`Product Create`);
+      this.addProduct(this.formGroupProduct);
       this.formGroupProduct.reset();
     } else {
       alert('Product Invalid');
     }
+  }
+
+  addProduct(product: any): void {
+    this.productsService.addProduct(product);
   }
 }

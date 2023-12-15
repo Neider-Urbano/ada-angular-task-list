@@ -10,7 +10,6 @@
 }
 
 .container-main-section-dos {
-  background: red;
   width: 75%;
 }
 
@@ -21,7 +20,7 @@
 }
 
 .container-product-card {
-  width: 200px;
+  width: 400px;
   background: gray;
   border-radius: 10px;
 }

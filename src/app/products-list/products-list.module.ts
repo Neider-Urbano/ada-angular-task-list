@@ -8,6 +8,8 @@ import { FilterOptionsAdvanceComponent } from '../filter-options-advance/filter-
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductStyleDirective } from '../product-card/product-style.directive';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     ProductsListComponent,
@@ -16,6 +18,11 @@ import { ProductStyleDirective } from '../product-card/product-style.directive';
     ProductCardComponent,
     ProductStyleDirective,
   ],
-  imports: [CommonModule, ProductsListRoutingModule],
+  imports: [
+    CommonModule,
+    ProductsListRoutingModule,
+    MatCardModule,
+    MatButtonModule,
+  ],
 })
 export class ProductsListModule {}

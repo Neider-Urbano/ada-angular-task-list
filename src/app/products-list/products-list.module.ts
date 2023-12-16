@@ -10,6 +10,7 @@ import { ProductStyleDirective } from '../product-card/product-style.directive';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { FirstCharacterMayusPipe } from './first-character-mayus.pipe';
 @NgModule({
   declarations: [
     ProductsListComponent,
@@ -17,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
     FilterOptionsAdvanceComponent,
     ProductCardComponent,
     ProductStyleDirective,
+    FirstCharacterMayusPipe,
   ],
   imports: [
     CommonModule,

@@ -8,7 +8,10 @@
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content>
-      {{ product.color }}
+      <p>{{ product.color }}</p>
+      <p>Preview Price {{ product.prevPrice | currency }}</p>
+      <p>New Price {{ product.newPrice | currency }}</p>
+      <p>Category {{ product.category | firstCharacterMayus }}</p>
     </mat-card-content>
   </mat-card>
 </div>

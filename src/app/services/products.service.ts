@@ -22,8 +22,10 @@ export class ProductsService {
   }
 
   addProduct(product: Product): string {
-    this.listProducts.push(product);
-    localStorage.setItem('products', JSON.stringify(this.listProducts));
+    localStorage.setItem(
+      'products',
+      JSON.stringify([...this.listProducts, product])
+    );
     return 'Add Product ';
   }
 
@@ -33,6 +35,11 @@ export class ProductsService {
     );
     localStorage.setItem('products', JSON.stringify(this.listProducts));
     return 'Delete Product';
+  }
+
+  clearProducts(): string {
+    localStorage.removeItem('products');
+    return 'Clean Products';
   }
 
   getProductId(idProduct: number): Product | undefined {

@@ -60,9 +60,10 @@ export class FormCreateProductComponent {
   }
 
   onSubmit(form: FormGroupProduct) {
+    console.log(form);
     if (this.formGroupProduct.valid) {
       alert(`Product Create`);
-      this.addProduct(this.formGroupProduct);
+      this.addProduct(form);
       this.formGroupProduct.reset();
     } else {
       alert('Product Invalid');

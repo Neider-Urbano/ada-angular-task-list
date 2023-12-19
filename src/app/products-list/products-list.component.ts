@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, from, map } from 'rxjs';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../models/product.model';
@@ -8,7 +8,7 @@ import { Product } from '../models/product.model';
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.css'],
 })
-export class ProductsListComponent implements OnInit {
+export class ProductsListComponent implements OnInit, OnDestroy {
   visible = false;
   private productsFrom$: Observable<any>;
 
@@ -21,6 +21,10 @@ export class ProductsListComponent implements OnInit {
       .pipe(map((data) => data))
       .subscribe((data) => console.log(data));
     this.visible = this.products.length > 0;
+  }
+
+  ngOnDestroy(): void {
+    this.productsService.clearProducts();
   }
 
   get products(): Array<Product> {

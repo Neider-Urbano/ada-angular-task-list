@@ -13,9 +13,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { HomeNuProductsComponent } from './home-nu-products/home-nu-products.component';
+import { HomeNewestCollectionComponent } from './home-newest-collection/home-newest-collection.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterAppComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterAppComponent,
+    HomeNuProductsComponent,
+    HomeNewestCollectionComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
